@@ -1,0 +1,310 @@
+:root {
+  --primary-blue: #6CACE4;
+  --dark-navy: #001838;
+  --accent-gold: #FFC72C;
+  --bg-dark: #0a1118;
+  --card-bg: #142231;
+  --text-white: #FFFFFF;
+  --text-muted: #8E9AAF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kanit', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  line-height: 1.6;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Header & Nav Bar */
+header {
+  width: 100%;
+  background-color: var(--dark-navy);
+  padding: 1.2rem 2rem;
+  border-bottom: 2px solid var(--primary-blue);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+}
+
+.logo span span {
+  color: var(--text-white);
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-left: 1.8rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--primary-blue);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 3.5rem 1rem 2rem 1rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.hero .tag {
+  color: var(--primary-blue);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin: 0.8rem 0;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.hero h1 span {
+  color: var(--primary-blue);
+}
+
+.hero p {
+  color: #d1d5db;
+}
+
+/* Grid เรียงการ์ดแนวนอน 3 คอลัมน์ (หน้า 1 และ หน้า 2) */
+.featured-grid, .grid-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem 1.5rem;
+  text-align: center;
+}
+
+.featured-grid h2 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-blue);
+}
+
+.card-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  align-items: stretch;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #1f3448;
+  text-align: left;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-blue);
+}
+
+/* ปรับความสูงรูปภาพยาวเพิ่มขึ้นอีกเป็น 400px */
+.card img {
+  width: 100%;
+  height: 400px; /* เพิ่มความสูงรูปภาพให้ยาวสวยสง่ายิ่งขึ้น */
+  object-fit: cover;
+  display: block;
+}
+
+.card-info {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-info span {
+  color: var(--primary-blue);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.card-info h3 {
+  color: var(--text-white);
+  margin: 0.4rem 0;
+  font-size: 1.2rem;
+}
+
+.card-info p {
+  color: #d1d5db;
+  font-size: 0.95rem;
+}
+
+/* Layout การ์ดซ้าย-ขวา สำหรับหน้า 3 (Collection) */
+.detail-section {
+  max-width: 900px;
+  width: 100%;
+  padding: 0 1.5rem 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.detail-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--primary-blue);
+  box-shadow: 0 8px 24px rgba(108, 172, 228, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(108, 172, 228, 0.35);
+}
+
+.detail-img {
+  flex: 0 0 280px;
+  height: 220px;
+  overflow: hidden;
+  border-right: 2px solid #1f3448;
+}
+
+.detail-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detail-content {
+  flex: 1;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detail-tag {
+  color: var(--primary-blue);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+}
+
+.detail-content h2 {
+  color: var(--text-white);
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.detail-content p {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Layout สำหรับหน้า 4 (About) */
+.about-section {
+  max-width: 900px;
+  width: 100%;
+  padding: 0 1.5rem 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.about-card {
+  background: var(--card-bg);
+  padding: 2.2rem;
+  border-radius: 12px;
+  border-left: 5px solid var(--primary-blue);
+  border-top: 1px solid #1f3448;
+  border-right: 1px solid #1f3448;
+  border-bottom: 1px solid #1f3448;
+}
+
+.about-card h3 {
+  margin-bottom: 0.8rem;
+  color: var(--primary-blue);
+  font-size: 1.3rem;
+}
+
+.about-card p {
+  color: #d1d5db;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Footer ตรึงล่างสุด */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  background: var(--dark-navy);
+  border-top: 1px solid #1f3448;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Responsive สำหรับแท็บเล็ตและมือถือ */
+@media (max-width: 900px) {
+  .card-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-group {
+    grid-template-columns: 1fr;
+  }
+  .detail-card {
+    flex-direction: column;
+  }
+  .detail-img {
+    width: 100%;
+    flex: none;
+    height: 200px;
+    border-right: none;
+    border-bottom: 2px solid #1f3448;
+  }
+}
